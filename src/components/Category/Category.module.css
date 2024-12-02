@@ -1,0 +1,45 @@
+.category {
+  position: relative;
+  height: 350px;
+  width: 300px;
+  background-color: white;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+}
+
+.category img {
+  width: 100%;
+  object-fit: contain;
+  max-height: 250px;
+  padding: 0px 10px;
+}
+
+.category a {
+  text-decoration: none;
+  color: rgb(35, 35, 35);
+}
+.category h2 {
+  font-weight: bold;
+}
+.category h2,
+.category p {
+  padding: 5px;
+  margin-left: 15px;
+}
+
+.category p {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: rgb(9, 132, 209);
+}
+
+.category__container {
+  position: relative;
+  margin-top: -15%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  place-items: center;
+}

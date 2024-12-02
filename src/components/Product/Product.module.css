@@ -1,0 +1,98 @@
+.card__container {
+  width: 220px;
+  box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
+  padding: 10px;
+  margin: 20px 0;
+  background-color: white;
+  color: black;
+  text-decoration: none;
+  position: relative;
+}
+
+.card__container:hover .button {
+  display: block;
+}
+
+.card__container img {
+  padding: 10px;
+  width: 90%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.card__container h3 {
+  max-width: 90%;
+  margin: 0 10px;
+}
+
+.button {
+  display: none;
+  padding: 5px 10px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  width: 95%;
+  margin: 10px 0;
+  border-radius: 30px;
+  position: absolute;
+  bottom: 0;
+  left: 5px;
+}
+
+.button:hover {
+  background-color: var(--primary-shade);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.product__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  max-width: 100%;
+  margin: 50px auto;
+  gap: 5px;
+  justify-items: center;
+}
+
+.d_flex {
+  box-shadow: none;
+  height: auto;
+  display: flex;
+  gap: 50px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.d_flex h3 {
+  padding: 20px 0px;
+  font-weight: 600;
+}
+
+.d_flex .button {
+  display: block;
+  position: static;
+  width: 150px;
+  /* margin-right: 40px; */
+}
+
+.d_flex {
+  height: 50vh;
+}
+
+.d_flex img {
+  width: 300px !important;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .d_flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
