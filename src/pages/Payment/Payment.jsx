@@ -63,8 +63,13 @@ const Payment = () => {
                 {/* price */}
                 <div className={classes.payment__price}>
                   <div>
-                    <span>
-                      Total Order | <CurrencyFormat amount={totalItem} />
+                    <span
+                      style={{
+                        display: "flex",
+                        gap: "10px",
+                      }}
+                    >
+                      <p>Total Order |</p> <CurrencyFormat amount={totalItem} />
                     </span>
                   </div>
                   <button>Pay Now</button>
