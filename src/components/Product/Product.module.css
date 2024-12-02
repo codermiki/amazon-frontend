@@ -1,5 +1,6 @@
 .card__container {
-  width: 220px;
+  /* width: 220px; */
+  width: 280px;
   box-shadow: 0 0 10px rgb(0, 0, 0, 0.2);
   padding: 10px;
   margin: 20px 0;
@@ -52,7 +53,7 @@
 
 .product__container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   max-width: 100%;
   margin: 50px auto;
   gap: 5px;
