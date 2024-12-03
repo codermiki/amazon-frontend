@@ -36,6 +36,8 @@
 }
 
 .category__container {
+  max-width: 1560px;
+  margin: 0 auto;
   position: relative;
   margin-top: -15%;
   display: grid;
