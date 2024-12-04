@@ -51,7 +51,7 @@ const Header = () => {
             </select>
             <input type="text" name="" id="" placeholder="Search Product" />
             {/* search icon */}
-            <FaSearch size={38.5} />
+            <FaSearch size={37.5} />
           </div>
 
           {/* right header */}
