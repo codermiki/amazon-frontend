@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import ProtectRoute from "./components/ProtectRoute/ProtectRoute";
 import Layout from "./components/Layout/Layout";
 import Landing from "./pages/Landing/Landing";
 import Auth from "./pages/Auth/Auth";
@@ -25,9 +26,11 @@ export const Router = createBrowserRouter([
       {
         path: "/payment",
         element: (
-          <Elements stripe={stripePromise}>
-            <Payment />
-          </Elements>
+          <ProtectRoute msg={"you must log in to pay"} redirect={"/payment"}>
+            <Elements stripe={stripePromise}>
+              <Payment />
+            </Elements>
+          </ProtectRoute>
         ),
       },
       {
@@ -36,7 +39,14 @@ export const Router = createBrowserRouter([
       },
       {
         path: "/orders",
-        element: <Orders />,
+        element: (
+          <ProtectRoute
+            msg={"you must log in to see your order"}
+            redirect={"/orders"}
+          >
+            <Orders />
+          </ProtectRoute>
+        ),
       },
       {
         path: "/category/:categoryName",

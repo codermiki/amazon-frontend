@@ -72,7 +72,9 @@ const Header = () => {
                 {user ? (
                   <>
                     <p>Hello, {user?.email?.split("@")[0]}</p>
-                    <span onClick={() => auth.signOut()}>Log Out</span>
+                    <span onClick={() => (user ? auth.signOut() : null)}>
+                      Log Out
+                    </span>
                   </>
                 ) : (
                   <>
