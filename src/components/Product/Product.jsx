@@ -39,6 +39,7 @@ const Product = () => {
               key={singleProduct.id}
               product={singleProduct}
               renderAdd={true}
+              haveLink={true}
             />
           );
         })}

@@ -3,10 +3,12 @@ import classes from "./Orders.module.css";
 import { db } from "../../Utility/firebase";
 import { DataContext } from "../../components/DataProvider/DataProvider";
 import ProductCard from "../../components/Product/ProductCard";
+import Loader from "../../components/Loader/Loader";
 
 const Orders = () => {
   const [{ user }, dispatch] = useContext(DataContext);
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (user) {
@@ -22,10 +24,16 @@ const Orders = () => {
             }))
           );
         });
+      setLoading(false);
     } else {
       setOrders([]);
+      setLoading(false);
     }
   }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>

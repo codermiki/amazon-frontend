@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { DataContext } from "../DataProvider/DataProvider";
 import { ACTION } from "../../Utility/action.type";
 
-const ProductCard = ({ product, flex, renderDesc, renderAdd }) => {
+const ProductCard = ({ product, flex, renderDesc, renderAdd, haveLink }) => {
   function truncateTitle(title, maxLength) {
     if (title.length > maxLength) {
       return title.substring(0, maxLength) + "...";
@@ -28,7 +28,7 @@ const ProductCard = ({ product, flex, renderDesc, renderAdd }) => {
   return (
     <>
       <div className={`${classes.card__container} ${flex && classes.d_flex}`}>
-        <Link to={`products/${id}`}>
+        <Link to={haveLink ? `products/${id}` : ""}>
           <img src={image} alt="" />
         </Link>
         <div>
