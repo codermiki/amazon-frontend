@@ -45,6 +45,10 @@
   background-color: var(--primary-shade);
 }
 
+.button:active {
+  background-color: var(--primary-color);
+}
+
 .rating {
   display: flex;
   align-items: center;
