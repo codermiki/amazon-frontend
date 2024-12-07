@@ -11,9 +11,7 @@ import ProductDetail from "./pages/ProductDetail/ProductDetail";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Four04 from "./pages/Four04/Four04";
-const stripePromise = loadStripe(
-  "pk_test_51QPtlTDFnHQJJAEaktKKpDZA1ciNNLJ2oO101dza1Q4sfGZxtceQY8oGCc9MOuK4N1CO0OKet1bO8CPJ3nKKkmIn008pkqjmSp"
-);
+const stripePromise = loadStripe(import.meta.env.VITE_REACT_APP_STRIPE_PK);
 
 export const Router = createBrowserRouter([
   {
