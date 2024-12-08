@@ -8,10 +8,11 @@ import Loader from "../../components/Loader/Loader";
 const Orders = () => {
   const [{ user }, dispatch] = useContext(DataContext);
   const [orders, setOrders] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (user) {
+      setLoading(true);
       db.collection("users")
         .doc(user.uid)
         .collection("orders")
@@ -23,8 +24,8 @@ const Orders = () => {
               data: doc.data(),
             }))
           );
+          setLoading(false);
         });
-      setLoading(false);
     } else {
       setOrders([]);
       setLoading(false);
@@ -40,7 +41,7 @@ const Orders = () => {
       <section className={classes.container}>
         <div className={classes.orders__container}>
           <h2>Your Orders</h2>
-          {orders.length === 0 && (
+          {orders?.length === 0 && (
             <div style={{ padding: "20px" }}>you don`t have order yet.</div>
           )}
 
